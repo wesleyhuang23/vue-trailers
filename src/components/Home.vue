@@ -4,8 +4,10 @@
     <br>
     <ul>
       <li v-for="poster in posters[0]">
+        <router-link :to="{name: 'Trailer', params: {id: poster.id} }">
         <img v-bind:src="poster.poster_path"/>
         <p>{{poster.title}}</p>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -40,6 +42,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  a{
+    text-decoration: none;
+    color: white;
+  }
   ul{
     display: flex;
     flex-direction: row;
@@ -47,14 +53,14 @@ export default {
     overflow-x: scroll;
   }
   li{
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
   img{
     width:200px;
   }
   p{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
   }
 </style>
