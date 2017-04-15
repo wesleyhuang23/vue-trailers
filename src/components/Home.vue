@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <h1>{{ msg }}</h1>
+    <br>
     <ul>
       <li v-for="poster in posters[0]">
+        <img v-bind:src="poster.poster_path"/>
         <p>{{poster.title}}</p>
       </li>
     </ul>
@@ -22,6 +24,9 @@ export default {
     fetchNowPlaying(){
       this.$http.get('https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=undefined')
         .then(function(res) {
+          for(let i = 0; i < res.data.results.length; i++){
+            res.data.results[i].poster_path = 'https://image.tmdb.org/t/p/original' + res.data.results[i].poster_path;
+          }
           console.log(res.data.results);
           this.posters.push(res.data.results);
         })
@@ -35,5 +40,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    overflow-x: scroll;
+  }
+  li{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  img{
+    width:200px;
+  }
+  p{
+    font-size: 20px;
+    text-align: center;
+  }
 </style>
