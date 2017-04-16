@@ -32,7 +32,7 @@ export default {
           console.log(res.data.results);
           this.posters.push(res.data.results);
         })
-    },
+      },
   },
   filters: {
       uppercase: function (value){
@@ -41,7 +41,8 @@ export default {
   },
   created: function(){
     this.fetchNowPlaying();
-  }
+    console.log(this.$store.state.users);
+  },
 }
 </script>
 

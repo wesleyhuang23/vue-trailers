@@ -27,6 +27,7 @@ export default {
     },
     created: function () {
         this.fetchTrailers();
+        console.log(this.$store.state.users);
     }
 }
 </script>
