@@ -10,14 +10,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$vueGreen: #3AB882;
 *{
   margin: 0;
 }
 #app {
   margin: 0px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  color: white;
+  color: $vueGreen;
   text-align: center;
   height: 100vh;
   background-color: black;

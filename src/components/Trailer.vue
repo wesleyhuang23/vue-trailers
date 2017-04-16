@@ -1,7 +1,7 @@
 <template>
     <div>
         This is trailer for movie {{$route.params.id}}
-        </div>
+    </div>
 </template>
 
 <script>
