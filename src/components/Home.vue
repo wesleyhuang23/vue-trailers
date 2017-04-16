@@ -41,7 +41,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
   a{
     text-decoration: none;
     color: white;
@@ -51,11 +51,13 @@ export default {
     flex-direction: row;
     list-style: none;
     overflow-x: scroll;
+
+    li{
+      padding-left: 3px;
+      padding-right: 3px;
+    }
   }
-  li{
-    padding-left: 3px;
-    padding-right: 3px;
-  }
+  
   img{
     width:200px;
   }
