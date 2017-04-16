@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import resource from 'vue-resource'
 import { sync } from 'vuex-router-sync';
+import Search from './components/Search';
+
+Vue.component('Search', Search);
 
 //Vuex
 import {store} from './store';

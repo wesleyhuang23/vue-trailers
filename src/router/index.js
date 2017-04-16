@@ -17,5 +17,6 @@ export default new Router({
       name: 'Trailer',
       component: Trailer
     }
-  ]
+  ],
+  mode: 'history'
 })

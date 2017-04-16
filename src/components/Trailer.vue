@@ -20,8 +20,10 @@ export default {
                 for(let i = 0; i < res.data.results.length; i++){
                     res.data.results[i].key = 'https://www.youtube.com/embed/' + res.data.results[i].key;
                 }
-                this.movies.push(res.data.results);
-                console.log(this.movies);
+                this.movies.push(res.data.results.filter(function(movie){
+                    return movie.type === 'Trailer'
+                }));
+                console.log(this.movies)
             })
         }
     },

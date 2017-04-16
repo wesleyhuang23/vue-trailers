@@ -10,6 +10,9 @@
         </router-link>
       </li>
     </ul>
+
+    <Search msg="This is props and I come from Home Component, who is my parent" v-bind:title="this.posters[0][0]"></Search>
+
   </div>
 </template>
 
