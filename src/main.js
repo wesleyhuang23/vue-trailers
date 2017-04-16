@@ -7,12 +7,11 @@ import resource from 'vue-resource'
 import { sync } from 'vuex-router-sync';
 import Search from './components/Search';
 
-Vue.component('Search', Search);
-
 //Vuex
 import {store} from './store';
-
 sync(store, router);
+
+Vue.component('Search', Search);
 
 Vue.use(resource);
 

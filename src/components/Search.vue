@@ -13,14 +13,15 @@ export default {
     data () {
         return {
             term: '',
+            results:[] ,
         }
     },
     methods: {
         search(term){
             console.log(term)
-            this.$http.get('https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term).then(res => {
+            this.$http.get('https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term).then(function(res){
                 console.log(res.data.results);
-                this.search = res.data.results
+                this.results = res.data.results
             });
         }
     },
