@@ -1,9 +1,11 @@
 <template>
 <section class="trailer">
-    <div v-for="movie in movies[0]">
-        <iframe :src="movie.key" allowfullscreen frameborder="0"></iframe>
+    <div class="trailer-wrapper">
+        <div v-for="movie in movies[0]">
+            <iframe :src="movie.key" allowfullscreen frameborder="0"></iframe>
+        </div>
     </div>
-    </section>
+</section>
 </template>
 
 <script>
@@ -35,12 +37,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.trailer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.trailer-wrapper{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
 iframe{
     width: 1280px;
     height: 720px;
 }
 div{
-    margin-top: 150px;
-    margin-bottom: 150px;
+    width: 1280px;
+    height: 750px;
 }
 </style>

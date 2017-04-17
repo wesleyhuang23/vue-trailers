@@ -20,7 +20,6 @@ $vueGreen: #3AB882;
   margin: 0px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: $vueGreen;
-  text-align: center;
   background-color: black;
 }
 </style>

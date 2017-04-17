@@ -6,12 +6,14 @@ import router from './router'
 import resource from 'vue-resource'
 import { sync } from 'vuex-router-sync';
 import Search from './components/Search';
+import SearchResults from './components/SearchResults';
 
 //Vuex
 import {store} from './store';
 sync(store, router);
 
 Vue.component('Search', Search);
+Vue.component('SearchResults', SearchResults);
 
 Vue.use(resource);
 
