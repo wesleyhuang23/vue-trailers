@@ -3,8 +3,8 @@
         <div >
             <div class="search-results" v-for="movie in movies">
                 <router-link :to="{name: 'Trailer', params: {id: movie.id}}">
-                <img :src="movie.poster_path"/>
-                <p>{{movie.title}}</p>
+                <img v-show="movie.poster_path" :src="movie.poster_path"/>
+                <p v-show="movie.poster_path">{{movie.title}}</p>
                 </router-link>
             </div>
         </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
     props:['movies'],
-    data() {
+    data () {
         return {
             results: this.$store.state.search
         }
